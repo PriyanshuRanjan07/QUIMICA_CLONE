@@ -1,0 +1,603 @@
+
+/* ==============================
+   BASIC SETTINGS
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+:root {
+    --orange: #ff7800;
+    --dark: #050505;
+    --light-dark: #101010;
+    --border: #292929;
+    --gray: #aaaaaa;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid #202020;
+}
+
+.header-container {
+    width: 90%;
+    max-width: 1400px;
+    height: 75px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 45px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.navbar {
+    display: flex;
+    gap: 28px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #dddddd;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    color: var(--orange);
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    min-height: calc(100vh - 75px);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.68);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+}
+
+.hero-content > p {
+    color: var(--orange);
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    font-size: clamp(70px, 12vw, 150px);
+    line-height: 1;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.hero h1 span {
+    color: var(--orange);
+}
+
+.hero h2 {
+    color: #cccccc;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 11px 22px;
+    background: var(--orange);
+    color: #111;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #ff9635;
+}
+
+.outline-button {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #777;
+    margin-left: 8px;
+}
+
+
+/* ==============================
+   COMMON SECTION
+============================== */
+
+.section {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+    padding: 90px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 50px;
+    margin-bottom: 55px;
+}
+
+
+/* ==============================
+   ABOUT
+============================== */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+}
+
+.location {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 10px 14px;
+    font-size: 12px;
+}
+
+.location strong {
+    color: var(--orange);
+}
+
+.about-text {
+    border-left: 1px solid #333;
+    padding-left: 30px;
+}
+
+.about-text p {
+    color: var(--gray);
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   EVENTS
+============================== */
+
+.event {
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr;
+    gap: 70px;
+    align-items: center;
+
+    padding: 50px 0;
+    border-bottom: 1px solid #222;
+}
+
+.event.reverse {
+    grid-template-columns: 1.3fr 0.7fr;
+}
+
+.event.reverse .event-image {
+    order: 2;
+}
+
+.event-image img {
+    width: 100%;
+    max-width: 420px;
+    margin: auto;
+}
+
+.event-content small,
+.event-detail-text small {
+    color: var(--orange);
+}
+
+.event-content h2 {
+    font-size: 55px;
+    line-height: 1;
+    margin: 10px 0 20px;
+}
+
+.event-content p,
+.event-detail-text p {
+    color: var(--gray);
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+
+/* ==============================
+   SEGMENTS
+============================== */
+
+.segment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.segment-card {
+    background: var(--light-dark);
+    border: 1px solid var(--border);
+}
+
+.segment-card img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+.segment-card h3 {
+    padding: 15px;
+    font-size: 15px;
+}
+
+
+/* ==============================
+   INNER PAGE TITLE
+============================== */
+
+.page-title {
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 1px solid #1c1c1c;
+}
+
+.page-title p {
+    color: var(--orange);
+    letter-spacing: 3px;
+    font-size: 12px;
+}
+
+.page-title h1 {
+    font-size: 70px;
+    line-height: 1;
+    margin-top: 12px;
+}
+
+
+/* ==============================
+   EVENT DETAIL
+============================== */
+
+.event-detail {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.event-detail-image img {
+    max-width: 500px;
+    margin: auto;
+}
+
+.event-detail-text h2 {
+    font-size: 55px;
+    margin: 10px 0 20px;
+}
+
+
+/* ==============================
+   COURSE
+============================== */
+
+.semester {
+    background: #190a03;
+    padding: 25px;
+    margin-bottom: 30px;
+    border: 1px solid #3b1b09;
+    overflow-x: auto;
+}
+
+.semester > h2 {
+    background: var(--orange);
+    color: #111;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.semester h3 {
+    background: #ffe1b0;
+    color: #111;
+    text-align: center;
+    padding: 8px;
+    margin-top: 18px;
+}
+
+table {
+    width: 100%;
+    min-width: 700px;
+    border-collapse: collapse;
+    background: #ffe1b0;
+    color: #111;
+    font-size: 13px;
+}
+
+th,
+td {
+    border: 1px solid #111;
+    padding: 8px;
+    text-align: center;
+}
+
+td:nth-child(3) {
+    text-align: left;
+}
+
+
+/* ==============================
+   TEAM / FACULTY
+============================== */
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.person-card {
+    background: #0c0c0c;
+    border: 1px solid #252525;
+    text-align: center;
+}
+
+.person-photo {
+    aspect-ratio: 1;
+    background: #111;
+    overflow: hidden;
+}
+
+.person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.person-card h2 {
+    font-size: 15px;
+    margin: 15px 10px 5px;
+}
+
+.person-card p {
+    color: var(--orange);
+    font-size: 12px;
+    padding-bottom: 18px;
+}
+
+
+/* ==============================
+   NEWSLETTER
+============================== */
+
+.simple-note {
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background: #0c0c0c;
+    border-left: 3px solid var(--orange);
+}
+
+.simple-note h2 {
+    margin-bottom: 10px;
+}
+
+.simple-note p {
+    color: var(--gray);
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+.footer {
+    border-top: 1px solid #222;
+    padding: 60px 0 30px;
+    background: #080808;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1400px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+}
+
+.footer-box img {
+    width: 45px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.footer-box h3 {
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.footer-box p {
+    color: #888;
+    font-size: 12px;
+}
+
+.footer-box h3 span {
+    color: var(--orange);
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        gap: 15px;
+    }
+
+    .about-container,
+    .event,
+    .event.reverse,
+    .event-detail {
+        grid-template-columns: 1fr;
+    }
+
+    .event.reverse .event-image {
+        order: 0;
+    }
+
+    .about-text {
+        border-left: none;
+        border-top: 1px solid #333;
+        padding: 25px 0 0;
+    }
+
+    .segment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .people-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header-container {
+        height: 65px;
+    }
+
+    .navbar {
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .navbar a {
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: calc(100vh - 65px);
+    }
+
+    .hero h1 {
+        font-size: 65px;
+    }
+
+    .hero h2 {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .section-title {
+        font-size: 38px;
+    }
+
+    .segment-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .people-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .event-content h2,
+    .event-detail-text h2 {
+        font-size: 40px;
+    }
+
+    .page-title h1 {
+        font-size: 48px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .outline-button {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
